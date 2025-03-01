@@ -1,0 +1,37 @@
+
+Hash Table Approach
+
+A hash table is a data structure that maps keys to values using a hash function. In this case, the keys would be URLs, and the values could be simple flags indicating the presence of the URLs.
+
+Implementation Steps:
+1. Initialization: Create a hash table with an appropriate size.
+2. Adding a URL: Compute the hash of the URL and store it in the hash table.
+3. Checking for URL Containment: Compute the hash of the URL and check if it exists in the hash table.
+
+Time Complexity:
+- Initialization: O(1) for creating an empty hash table.
+- Adding a URL: O(1) on average, assuming a good hash function and low collision rate.
+- Checking for URL Containment: O(1) on average, assuming a good hash function and low collision rate.
+
+Space Complexity:
+- The space complexity is O(n), where n is the number of URLs stored in the hash table.
+
+Cost Implications
+
+Advantages:
+1. Exact Membership Check: Unlike Bloom filters, hash tables provide exact membership checks without false positives.
+2. Constant Time Operations: Both insertion and lookup operations are O(1) on average, making them very efficient.
+
+Disadvantages:
+1. Higher Memory Usage: Hash tables typically require more memory than Bloom filters because they store the actual URLs or their hash values.
+2. Potential Collisions: Although hash tables are designed to handle collisions, a poor hash function or high load factor can degrade performance.
+
+Comparison with Bloom Filter
+
+Memory Usage: Bloom filters are more memory-efficient, especially when dealing with large datasets. They use a fixed-size bit array, whereas hash tables grow with the number of elements.
+False Positives: Bloom filters can produce false positives, meaning they might indicate that a URL is present when it is not. Hash tables do not have this issue.
+Performance: Both data structures offer O(1) average time complexity for insertion and lookup. However, hash tables provide exact results, while Bloom filters trade accuracy for memory efficiency.
+
+Conclusion
+
+Choosing between a Bloom filter and a hash table depends on the specific requirements of your application. If memory efficiency is crucial and occasional false positives are acceptable, a Bloom filter is a suitable choice. On the other hand, if exact membership checks are required and memory usage is less of a concern, a hash table is a better option.
